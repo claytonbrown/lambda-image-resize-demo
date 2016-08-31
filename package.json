@@ -1,0 +1,18 @@
+{
+  "name": "lambda-image-resize-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lambda.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.1",
+    "aws-sdk": "^2.5.4",
+    "gm": "^1.23.0",
+    "path": "^0.12.7",
+    "util": "^0.10.3"
+  }
+}
