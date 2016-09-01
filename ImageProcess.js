@@ -6,9 +6,18 @@ var gm = require('gm').subClass({
     imageMagick: true
 });
 var util = require('util');
+
+var LambdaWatermark = require('lambda-watermark');
+var options = {
+  watermarkImagePath: './watermark.png',
+  relativeSize: 5,
+  opacity: 100
+};
+
 // get reference to S3 client
 var s3 = new AWS.S3();
 exports.handler = function(event, context) {
+
     // Read options from the event.
     console.log("Reading options from event:\n", util.inspect(event, {
         depth: 5
@@ -184,6 +193,7 @@ exports.handler = function(event, context) {
             console.log('---->Successfully resized ' + srcBucket +
                 ' and uploaded to' + dstBucket + "/images");
         }
-        context.done();
+        new LambdaWatermark(options)(event, context);
+        // context.done();
     });
 };
