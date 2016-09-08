@@ -1,6 +1,6 @@
 # Lambda Image Process Demo
 
-Resize image to mutliple specs, and upload into the same bucket of AWS S3.
+Resize image to mutiple specs and upload into the same bucket of AWS S3.
 
 ## Configuration
 
