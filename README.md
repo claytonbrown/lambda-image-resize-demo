@@ -1,28 +1,43 @@
 # Lambda Image Process Demo
 
-Resize size and stamp watermark by using node.js as lambda function on AWS.
+Resize image to mutliple specs, and upload into the same bucket of AWS S3.
+
+## Configuration
+
+Edit config.json as you will.
+
+```
+config/config.json
+
+[
+    {
+        "width": 800,
+        "destinationPath": "large"
+    },
+    {
+        "width": 500,
+        "destinationPath": "medium"
+    },
+    {
+        "width": 200,
+        "destinationPath": "small"
+    }
+]
+```
+
+* width: Image Width
+* destinationPath: Directory Path
 
 ## Usage
 
-**Install Dependencies**
+**Create Lambda Code Package**
 
 ```
-npm i
+make lambda
 ```
 
-**Pack Resources**
-
-Required assets:
+**Clear Build Files**
 
 ```
-node_modules/
-ImageProcess.js
+make clean
 ```
-
-Compress to zip file.
-
-**Upload Zip**
-
-Upload zip file to create lambda function and it's done.
-
-Start to test!
